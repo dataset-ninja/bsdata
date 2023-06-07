@@ -54,14 +54,15 @@ custom_data = {
     "name": PROJECT_NAME,
     "fullname": PROJECT_NAME_FULL,
     "cv_tasks": ["instance segmentation"],
-    "annotation_types": ["isntance segmentation"],
+    "annotation_types": ["instance segmentation"],
     "industries": ["general domain"],  # ! Not sure
     "release_year": 2021,
     "homepage_url": "https://github.com/2Obe/BSData",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode/",
     "preview_image_id": 224318,
-    "github_url": "https://github.com/2Obe/BSData",
+    "github": "dataset-ninja/bsdata",
+    "github_url": "https://github.com/dataset-ninja/bsdata",
     "citation_url": None,  # ! Not sure
     "download_sly_url": download_sly_url,
     # optional fields
@@ -70,7 +71,6 @@ custom_data = {
     # "organization_name": None,
     # "organization_url": None,
     # "tags": [],
-    "github": "dataset-ninja/bsdata",
 }
 api.project.update_custom_data(project_id, custom_data)
 
