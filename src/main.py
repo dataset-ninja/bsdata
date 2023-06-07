@@ -60,7 +60,7 @@ custom_data = {
     "homepage_url": "https://github.com/2Obe/BSData",
     "license": "CC BY-SA 4.0",
     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode/",
-    "preview_image_id": 212967,
+    "preview_image_id": 224318,
     "github_url": "https://github.com/2Obe/BSData",
     "citation_url": None,  # ! Not sure
     "download_sly_url": download_sly_url,
@@ -131,7 +131,7 @@ def build_stats():
 def build_visualizations():
     renderers = [
         dtools.Poster(project_id, project_meta, force=False),
-        # dtools.SideAnnotationsGrid(project_id, project_meta), # ! Return after bugfix!
+        dtools.SideAnnotationsGrid(project_id, project_meta),  # ! Return after bugfix!
     ]
     animators = [
         dtools.HorizontalGrid(project_id, project_meta),
