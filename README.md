@@ -1,3 +1,3 @@
 # BSData
 
-BSData: Instance segmentation dataset
+BSData is a dataset for instance segmentation tasks.
