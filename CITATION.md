@@ -2,7 +2,7 @@ If you make use of the BSData data, please cite the following reference (to be p
 
 ```
 @misc{BSData,
-	author = "TO BE FILLED MANUALLY!",
+	author = "2Obe",
 	title = "BSData",
 	howpublished = "https://github.com/2Obe/BSData"
 }
