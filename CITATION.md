@@ -1,11 +1,11 @@
 If you make use of the BSData data, please cite the following reference (to be prepared after the challenge workshop) in any publications:
 
 ```
-@misc{bsdata,
+@misc{BSData,
 	author = "2Obe",
-	title = "BSData - dataset for Instance Segmentation and industrial Wear Forecasting",
+	title = "BSData",
 	howpublished = "https://github.com/2Obe/BSData"
 }
 ```
 
-[🔗 Source](https://github.com/2Obe/BSData).
+[🔗 Source](https://github.com/2Obe/BSData)
