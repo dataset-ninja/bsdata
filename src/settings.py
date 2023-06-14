@@ -20,7 +20,7 @@ RELEASE_YEAR: int = 2021
 HOMEPAGE_URL: str = "https://github.com/2Obe/BSData"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 224318
+PREVIEW_IMAGE_ID: int = 224016
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/bsdata"
