@@ -1,4 +1,4 @@
-**BSData** (BSData) is a dataset for instance segmentation tasks. It is applicable or relevant across various domains.
+**BSData** is a dataset for instance segmentation tasks. It is applicable or relevant across various domains.
 
 The dataset consists of 1104 images with 478 labeled objects belonging to 1 single class (*pitting*).
 
