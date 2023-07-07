@@ -6,4 +6,4 @@ Each image in the BSData dataset has pixel-level instance segmentation annotatio
 
 Here is the visualized example grid with annotations:
 
-<img src="https://github.com/dataset-ninja/bsdata/raw/main/visualizations/horizontal_grid.png">
+[Dataset classes](https://github.com/dataset-ninja/bsdata/raw/main/visualizations/horizontal_grid.webm)
