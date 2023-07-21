@@ -1,11 +1,7 @@
-If you make use of the BSData data, please cite the following reference (to be prepared after the challenge workshop) in any publications:
+If you make use of the BSData data, please cite the following reference:
 
-```
-@misc{BSData,
-	author = "2Obe",
-	title = "BSData",
-	howpublished = "https://github.com/2Obe/BSData"
-}
+``` bibtex
+PASTE HERE CUSTOM CITATION FROM THE SOURCE URL
 ```
 
-[🔗 Source](https://github.com/2Obe/BSData)
+[🔗 Source](https://arxiv.org/abs/2103.13003)
