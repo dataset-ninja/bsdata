@@ -21,9 +21,7 @@ PROJECT_NAME_FULL: str = "BSData: Dataset for Instance Segmentation and Industri
 ##################################
 LICENSE: License = License.CC_BY_SA_4_0()
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
-    Domain.Industrial(),
-    Domain.ComputerAidedQualityControl(),
-    Research.SurfaceDefectDetection(),
+    Domain.SurfaceDefectDetection(),
 ]
 CATEGORY: Category = Category.Manufacturing()
 
