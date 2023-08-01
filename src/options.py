@@ -1,6 +1,7 @@
 from dataset_tools.templates import AnnotationType
-
 from src.settings import ANNOTATION_TYPES
+
+SAMPLE_RATE = 1  # make less if dataset is too big
 
 ###############################################################################
 # ! Set up values if you want to change default values of visualizations
@@ -136,6 +137,7 @@ def get_stats_options():
         "Previews": {
             "is_detection_task": PREVIEWS_IS_DETECTION_TASK,
         },
+        "Other": {"sample_rate": SAMPLE_RATE},
     }
 
     checked_stats_settings = {}

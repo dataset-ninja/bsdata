@@ -1,15 +1,16 @@
-Please visit dataset [homepage](https://github.com/2Obe/BSData) to download the data.
+Dataset **BSData** can be downloaded in Supervisely format:
 
-Afterward, you have the option to download it in the universal supervisely format by utilizing the _dataset-tools_ package:
+ [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/D/B/d1/763hy2c91clyW9LHLU9Z2ja817089MfNFbmwZP0S14raCu09rAa2Nv2OQDKtigA9cZKE6EN78Y2jeSX4aLmNGIcTk6Jsa43ihadVaDRVoZh8qOXoCSpbvS38GPPs.tar)
 
-```bash
+As an alternative, it can be downloaded with *dataset-tools* package:
+``` bash
 pip install --upgrade dataset-tools
 ```
 
 ... using following python code:
-
-```python
+``` python
 import dataset_tools as dtools
 
-dtools.download(dataset='BSData', dst_path='~/dtools/datasets/BSData.tar')
+dtools.download(dataset='BSData', dst_dir='~/dataset-ninja/')
 ```
+The data in original format can be 🔗[downloaded here](https://github.com/2Obe/BSData/archive/refs/heads/main.zip)

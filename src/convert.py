@@ -12,9 +12,9 @@ from supervisely.io.json import load_json_file
 def convert_and_upload_supervisely_project(
     api: sly.Api, workspace_id: int, project_name: str
 ) -> sly.ProjectInfo:
-    dataset_path = "/Users/iwatkot/Downloads/ninja-datasets/BSData"
+    dataset_path = "APP_DATA/BSData-main"
     batch_size = 30
-    ds_name = "ds"
+    ds_names = ["train", "test"]
 
     images_folder = "data"
     annotations_folder = "label"
@@ -45,32 +45,42 @@ def convert_and_upload_supervisely_project(
                 label_poly = sly.Label(poligon, obj_class)
                 labels.append(label_poly)
 
-            type_tag = sly.Tag(type_tag_meta, value=image_data[1])
-            tags = [type_tag]
+            # type_tag = sly.Tag(type_tag_meta, value=image_data[1])
+
+            if image_data[1] == 1:
+                tags = [sly.Tag(type_1_tag)]
+            elif image_data[1] == 2:
+                tags = [sly.Tag(type_2_tag)]
+
+            # tag_name = getitfrom(ann_file) # for example
+            # tags = [sly.Tag(tag_meta) for tag_meta in tag_metas if tag_meta.name == tag_name]
+
+            # return sly.Annotation(img_size=(img_height, img_wight), labels=labels, img_tags=tags)
 
             wear_dev = image_data[2]
             for curr_wear_dev in wear_dev:
                 tag_wear_dev = sly.Tag(wear_dev_tag, value=curr_wear_dev)
                 tags.append(tag_wear_dev)
 
-            train_test_meta = tag_name_to_meta.get(image_data[0])
-            if train_test_meta is not None:
-                tag_train_test = sly.Tag(train_test_meta)
-                tags.append(tag_train_test)
+            # train_test_meta = tag_name_to_meta.get(image_data[0])
+            # if train_test_meta is not None:
+            #     tag_train_test = sly.Tag(train_test_meta)
+            #     tags.append(tag_train_test)
 
             return sly.Annotation(img_size=(img_height, img_wight), labels=labels, img_tags=tags)
 
     obj_class = sly.ObjClass("pitting", sly.Polygon)
-    train_tag = sly.TagMeta("train", sly.TagValueType.NONE)
-    test_tag = sly.TagMeta("test", sly.TagValueType.NONE)
-    type_tag_meta = sly.TagMeta("type", sly.TagValueType.ANY_NUMBER)
+    # train_tag = sly.TagMeta("train", sly.TagValueType.NONE)
+    # test_tag = sly.TagMeta("test", sly.TagValueType.NONE)
+    type_1_tag = sly.TagMeta("type_1", sly.TagValueType.NONE)
+    type_2_tag = sly.TagMeta("type_2", sly.TagValueType.NONE)
     wear_dev_tag = sly.TagMeta("wear_dev", sly.TagValueType.ANY_STRING)
 
-    tag_name_to_meta = {"train": train_tag, "test": test_tag}
+    tag_name_to_meta = {"type_1": type_1_tag, "type_2": type_2_tag}
 
     project = api.project.create(workspace_id, project_name, change_name_if_conflict=True)
     meta = sly.ProjectMeta(
-        obj_classes=[obj_class], tag_metas=[train_tag, test_tag, type_tag_meta, wear_dev_tag]
+        obj_classes=[obj_class], tag_metas=[type_1_tag, type_2_tag, wear_dev_tag]
     )
     api.project.update_meta(project.id, meta.to_json())
 
@@ -90,26 +100,30 @@ def convert_and_upload_supervisely_project(
             curr_data["annotations"],
         )
 
-    images_names = list(name_to_data.keys())
+    progress = sly.Progress("Add data to {}".format(project_name), len(name_to_data))
 
-    progress = sly.Progress("Add data to {} dataset".format(ds_name), len(images_names))
-    dataset = api.dataset.create(project.id, ds_name, change_name_if_conflict=True)
+    for ds_name in ds_names:
+        curr_name_to_data = {name: tpl for name, tpl in name_to_data.items() if tpl[0] == ds_name}
+        images_names = list(curr_name_to_data.keys())
 
-    for img_names_batch in sly.batched(images_names, batch_size=batch_size):
-        images_pathes_batch = [
-            os.path.join(dataset_path, images_folder, image_name) for image_name in img_names_batch
-        ]
+        dataset = api.dataset.create(project.id, ds_name, change_name_if_conflict=True)
 
-        img_infos = api.image.upload_paths(dataset.id, img_names_batch, images_pathes_batch)
-        img_ids = [im_info.id for im_info in img_infos]
+        for img_names_batch in sly.batched(images_names, batch_size=batch_size):
+            images_pathes_batch = [
+                os.path.join(dataset_path, images_folder, image_name)
+                for image_name in img_names_batch
+            ]
 
-        anns_batch = [create_ann(image_path) for image_path in images_pathes_batch]
+            img_infos = api.image.upload_paths(dataset.id, img_names_batch, images_pathes_batch)
+            img_ids = [im_info.id for im_info in img_infos]
 
-        try:
-            api.annotation.upload_anns(img_ids, anns_batch)
-        except Exception:
-            pass
+            anns_batch = [create_ann(image_path) for image_path in images_pathes_batch]
 
-        progress.iters_done_report(len(img_names_batch))
+            try:
+                api.annotation.upload_anns(img_ids, anns_batch)
+            except Exception:
+                pass
+
+            progress.iters_done_report(len(img_names_batch))
 
     return project

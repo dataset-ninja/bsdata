@@ -1,7 +1,12 @@
 If you make use of the BSData data, please cite the following reference:
 
-``` bibtex
-PASTE HERE CUSTOM CITATION FROM THE SOURCE URL
+``` bibtex 
+@dataset{BSData,
+	author={Tobias Schlagenhauf and Magnus Landwehr and Jürgen Fleischer},
+	title={BSData: Dataset for Instance Segmentation and Industrial Wear Forecasting},
+	year={2021},
+	url={https://github.com/2Obe/BSData}
+}
 ```
 
-[🔗 Source](https://arxiv.org/abs/2103.13003)
+[Source](https://github.com/2Obe/BSData)

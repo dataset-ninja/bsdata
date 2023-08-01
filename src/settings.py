@@ -20,7 +20,6 @@ PROJECT_NAME_FULL: str = "BSData: Dataset for Instance Segmentation and Industri
 # * After uploading to instance ##
 ##################################
 LICENSE: License = License.CC_BY_SA_4_0()
-INDUSTRIES: List[Industry] = [Industry.GeneralDomain()]
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
     Domain.Industrial(),
     Domain.ComputerAidedQualityControl(),
@@ -60,13 +59,16 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 PAPER: Optional[str] = "https://arxiv.org/abs/2103.13003"
-CITATION_URL: Optional[str] = "https://arxiv.org/abs/2103.13003"
+CITATION_URL: Optional[str] = None
 AUTHORS: Optional[List[str]] = ["Tobias Schlagenhauf", "Magnus Landwehr", "Jürgen Fleischer"]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = "Karlsruhe Institute of Technology, Germany"
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.kit.edu/english/"
 
-SLYTAGSPLIT: Optional[Dict[str, List[str]]] = None
+SLYTAGSPLIT: Optional[Union[Dict[str, List[str]], str]] = {
+    "occurring BSD types": ["type_1", "type_2"],
+    # "wear development": "wear_dev",
+}
 TAGS: List[str] = None
 
 ##################################
