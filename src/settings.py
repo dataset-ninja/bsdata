@@ -39,7 +39,7 @@ if RELEASE_DATE is None:
 HOMEPAGE_URL: str = "https://github.com/2Obe/BSData"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 1734422
+PREVIEW_IMAGE_ID: int = 1734321
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/bsdata"
