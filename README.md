@@ -1,3 +1,3 @@
-# BSData
+# BSData: Dataset for Instance Segmentation and Industrial Wear Forecasting
 
-BSData is a dataset for instance segmentation tasks.
+BSData is a dataset for instance segmentation, semantic segmentation, object detection tasks.

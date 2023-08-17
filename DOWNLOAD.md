@@ -1,6 +1,6 @@
 Dataset **BSData** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/2/7/xd/L76f68i3drlJ6uEhPyGAzEnvSyh1JVf19qNbvUbyRJxVrAa1xHnRQnqvpbHGwN6rM1yxnsUD2D4h0bvxeqXchnZ4bakG2GtQFQ8Pe1VK0teGSFeORR8VTaJtXK16.tar)
+ [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/i/3/un/S0kECbCyumPemjCaIgaQy4gfo4SSuOXC0RifnqH2XNwOFebNUkul9dW2DgYYa4cmgdB8dxZjT3SowxEbNZalR9dMFirn7vTcK4ENIQIijbMMeM7aZHxPkz6ElNxg.tar)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
