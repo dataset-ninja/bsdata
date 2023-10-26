@@ -37,7 +37,7 @@ RELEASE_DATE: Optional[str] = "2021-02-09"  # e.g. "YYYY-MM-DD"
 if RELEASE_DATE is None:
     RELEASE_YEAR: int = None
 
-HOMEPAGE_URL: str = "https://github.com/2Obe/BSData"
+HOMEPAGE_URL: str = "https://publikationen.bibliothek.kit.edu/1000129520"
 # e.g. "https://some.com/dataset/homepage"
 
 PREVIEW_IMAGE_ID: int = 1734321
@@ -58,8 +58,11 @@ CLASS2COLOR: Optional[Dict[str, List[str]]] = None
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 PAPER: Optional[str] = "https://arxiv.org/abs/2103.13003"
+REPOSITORY: Optional[Union[str, List[str], Dict[str, str]]] = {"GitHub":"https://github.com/2Obe/BSData"}
+
 CITATION_URL: Optional[str] = None
 AUTHORS: Optional[List[str]] = ["Tobias Schlagenhauf", "Magnus Landwehr", "Jürgen Fleischer"]
+AUTHORS_CONTACTS: Optional[List[str]] = ["tobias.schlagenhauf@kit.edu", "https://sungsy.github.io/ML_Site/"]
 
 ORGANIZATION_NAME: Optional[Union[str, List[str]]] = "Karlsruhe Institute of Technology, Germany"
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.kit.edu/english/"
@@ -108,8 +111,10 @@ def get_settings():
     settings["download_original_url"] = DOWNLOAD_ORIGINAL_URL
     settings["class2color"] = CLASS2COLOR
     settings["paper"] = PAPER
+    settings["repository"] = REPOSITORY    
     settings["citation_url"] = CITATION_URL
     settings["authors"] = AUTHORS
+    settings["authors_contacts"] = AUTHORS_CONTACTS    
     settings["organization_name"] = ORGANIZATION_NAME
     settings["organization_url"] = ORGANIZATION_URL
     settings["slytagsplit"] = SLYTAGSPLIT
