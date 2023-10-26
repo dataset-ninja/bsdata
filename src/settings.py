@@ -66,7 +66,7 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.kit.edu/english
 
 SLYTAGSPLIT: Optional[Union[Dict[str, List[str]], str]] = {
     "occurring BSD types": ["type_1", "type_2"],
-    "__POSTTEXT__": "; or into the 27 wear developments",
+    "__POSTTEXT__": "; or into the 27 wear developments (***wear_dev***)",
 }
 TAGS: List[str] = None
 
