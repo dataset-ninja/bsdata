@@ -14,7 +14,7 @@ from dataset_tools.templates import (
 # * Before uploading to instance #
 ##################################
 PROJECT_NAME: str = "BSData"
-PROJECT_NAME_FULL: str = "BSData: Dataset for Instance Segmentation and Industrial Wear Forecasting"
+PROJECT_NAME_FULL: str = "BSData: Industrial Machine Tool Element Surface Defect Dataset"
 HIDE_DATASET = False  # set False when 100% sure about repo quality
 
 ##################################
