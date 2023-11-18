@@ -1,4 +1,4 @@
-**BSData: Dataset for Instance Segmentation and Industrial Wear Forecasting** is a dataset for instance segmentation, semantic segmentation, and object detection tasks. It is used in the surface defect detection domain. 
+**BSData: Industrial Machine Tool Element Surface Defect Dataset** is a dataset for instance segmentation, semantic segmentation, and object detection tasks. It is used in the surface defect detection domain. 
 
 The dataset consists of 394 images with 485 labeled objects belonging to 1 single class (*pitting*).
 
